@@ -1,0 +1,64 @@
+<div class="layout-container">
+    <mat-toolbar *ngIf="deviceType === 'phone'" class="mat-elevation-z8">
+        <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">
+                menu
+            </mat-icon>
+            <mat-icon *ngIf="sidenav.opened">
+                close
+            </mat-icon>
+        </button>
+        <div *ngIf="deviceType === 'phone'" class="phone-menu-heading">
+            <h1 class="phone-menu-title">Santa Inc</h1>
+            <div class="version-container" [innerHtml]="version"></div>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-container" [ngClass]="{'sidenav-phone-mode': deviceType === 'phone'}" >
+        <mat-sidenav mode="side" #sidenav="matSidenav" opened>
+            <div class="santa-img-container">
+                <img
+                    *ngIf = "deviceType === 'pc'"
+                    src="../assets/images/santa-img.png"
+                    class="ribbon"
+                    height="150"
+                    alt="Pine Branch Image"
+                />
+                <div *ngIf="deviceType !== 'phone'">
+                    <h1>Santa Inc</h1>
+                    <div class="version-container" [innerHtml]="version"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="menu-items-container">
+                <button routerLink="/toys-factory" routerLinkActive="active" mat-button class="menu-button">
+                    <mat-icon>videogame_asset</mat-icon>
+                    <span>Toys Factory</span>
+                </button>
+                <button routerLink="/delivery" routerLinkActive="active" mat-button class="menu-button">
+                    <mat-icon>snowmobile</mat-icon>
+                    <span>Delivery</span>
+                </button>
+                <button routerLink="/legal" routerLinkActive="active" mat-button class="menu-button">
+                    <mat-icon>balance</mat-icon>
+                    <span>Legal</span>
+                </button>
+                <button routerLink="/disconnect" routerLinkActive="active" mat-button class="menu-button">
+                    <mat-icon>power_settings_new</mat-icon>
+                    <span>Disconnect</span>
+                </button>
+            </div>
+            <div class="copy-rights">All rights reserved</div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <img
+                *ngIf = "deviceType === 'pc'"
+                src="../assets/images/pine-branch.png"
+                class="ribbon"
+                alt="Pine Branch Image"
+            />
+            <div class="main-content"  [ngClass]="{'phone-mode-main-content': deviceType === 'phone' || deviceType === 'tab'}">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

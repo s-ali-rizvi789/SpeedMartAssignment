@@ -1,0 +1,105 @@
+.layout-container {
+    .sidenav-container {
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: whitesmoke;
+    }
+    
+    .sidenav-phone-mode {
+        top: 4em;
+    }
+    
+    mat-toolbar {
+        background: #004d1a;
+        color: white;
+    }
+    
+    mat-sidenav {
+        background: #004d1a;
+    }
+    
+    mat-sidenav-content img {
+        transform: rotateY(180deg);
+        float: right;
+        height: 200px;
+    }
+    
+    .mat-drawer.mat-drawer-side {
+        width: 16em;
+    }
+    
+    .santa-img-container {
+        margin-top: 20%;
+        text-align: center;
+    }
+    
+    .version-container {
+        float: right;
+        color: whitesmoke;
+        margin-right: 20px;
+    }
+    
+    .phone-menu-heading {
+        position: absolute;
+        right: 0px;
+        margin-right: 20px;
+    
+        .version-container {
+            margin-right: 0px;
+            font-size: 15px;
+        }
+    }
+    
+    h1.phone-menu-title {
+        margin: 0;
+        font-size: 25px;
+        font-family: "Brush Script MT", cursive;
+        font-style: normal;
+        font-variant: normal;
+        color: #981b1d;
+        padding-top: 10px
+    }
+    
+    .menu-button {
+        height: 6%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1rem;
+        color: whitesmoke;
+        padding-left: 12%;
+    
+        mat-icon {
+            margin-right: 12px;
+        }
+    }
+    
+    .copy-rights {
+        position: absolute;
+        color: whitesmoke;
+        bottom: 10px;
+        left: 25%;
+    }
+    
+    .menu-items-container {
+        margin-top: 15%;
+    }
+    
+    .main-content {
+        margin-top: 200px;
+        margin-left: 10%;
+    }
+    
+    .phone-mode-main-content {
+        margin-top: 0px;
+        margin-left: 4%;
+    }
+    
+    .active {
+        background-color: #217121;
+    }
+}
